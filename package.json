@@ -1,0 +1,23 @@
+{
+  "name": "MoodyDeals",
+  "private": true,
+  "dependencies": {
+    "@rails/webpacker": "^3.4.3",
+    "ahoy.js": "^0.3.2",
+    "axios": "^0.18.0",
+    "babel-preset-react": "^6.24.1",
+    "bootstrap": "^4.1.0",
+    "chart.js": "^2.7.2",
+    "chartkick": "^2.3.5",
+    "moment": "^2.22.1",
+    "prop-types": "^15.6.1",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-moment": "^0.7.0",
+    "webpacker-react": "^0.3.2"
+  },
+  "devDependencies": {
+    "webpack-cli": "^2.0.14",
+    "webpack-dev-server": "^2.7.1"
+  }
+}

@@ -1,0 +1,47 @@
+// Place all the styles related to the Personnels controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.businesses {
+  width: 95%;
+  margin: 0;
+  padding: 0 1em;
+  a {
+    padding: 0.354em 0.5em;
+    border-radius: 0.354em;
+  }
+  table {
+    border-collapse: collapse;
+  }
+  td {
+    padding: 0.5em;
+    margin: 0;
+  }
+  th {
+    text-decoration: underline;
+    padding: 0.5em;
+  }
+  
+
+  td.actions {
+    ul {
+      padding: 0;
+      list-style: none;
+      li {
+        padding: 0.5em 0.5em;
+      }
+    }
+  }
+  
+  tr.list_line_odd {
+    background-color: #CDDFEA;
+  }
+
+  a {
+    color: #003E5E;
+  }
+  a:hover {
+    color: #003E5E;
+    background-color: white;
+  }
+}

@@ -1,0 +1,6 @@
+name,statement,data_source
+Accounts created per month,"SELECT strftime('%m-%Y', created_at) AS Month, COUNT(*) AS Accounts_created FROM accounts GROUP BY 1",main
+Daily Visitors to site,"SELECT strftime('%m-%d-%Y', started_at) AS date, COUNT(*) AS Visitors FROM ahoy_visits GROUP BY 1",main
+Businesses Popularity Total,"SELECT BUSINESSES.name  AS Business, SUM(DEALS.popularity) AS Popularity FROM DEALS, BUSINESSES WHERE BUSINESSES.id = DEALS.business_id ORDER BY popularity ASC",main
+Deals created a month,"SELECT  BUSINESSES.name, strftime('%m-%Y', DEALS.created_at) As Month, COUNT(*) AS Deals FROM DEALS, BUSINESSES WHERE DEALS.business_id = BUSINESSES.id ORDER BY BUSINESSES.name ASC",main
+Events created a month,"SELECT  BUSINESSES.name, strftime('%m-%Y', EVENTS.created_at) As Month, COUNT(*) AS Events FROM EVENTS, BUSINESSES WHERE EVENTS.business_id = BUSINESSES.id ORDER BY BUSINESSES.name ASC",main

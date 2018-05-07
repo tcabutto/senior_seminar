@@ -1,0 +1,18 @@
+<%= simple_form_for(@personnel) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <% if @personnel.username.nil? or @personnel.username == "" %>
+      <%= f.input :username %>
+    <% end %>
+    <%= f.input :branch, collection: Personnel.branches.keys, 
+        include_blank: false %>
+    <%= f.input :rank, collection: Personnel.ranks.keys, 
+        include_blank: false %>
+    <%= f.input :image_url, as: :file, label: 'Upload Profile Image' %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

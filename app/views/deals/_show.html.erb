@@ -1,0 +1,39 @@
+<p>
+  <strong>Category:</strong>
+  <%= @deal.category %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @deal.description %>
+</p>
+
+<p>
+  <strong>Start Date:</strong>
+  <%= @deal.start_date %>
+</p>
+
+<p>
+  <strong>End Date:</strong>
+  <%= @deal.end_date %>
+</p>
+
+<p>
+  <strong>Popularity:</strong>
+  <%= @deal.popularity %>
+</p>
+
+<p>
+  <strong>Qr Code:</strong>
+  <%= @deal.qr_code %>
+</p>
+
+<p>
+  <strong>Favorited by 
+    <% if @deal.get_likes.size == 1 %> 
+      1 user
+    <% else %>
+      <%= @deal.get_likes.size %> users
+    <% end %>
+  </strong>
+</p>

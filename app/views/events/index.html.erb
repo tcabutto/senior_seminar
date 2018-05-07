@@ -1,0 +1,41 @@
+<% if notice %>
+  <aside id="notice"><%= notice %></aside>
+<% end %>
+
+<h1>Events</h1>
+
+<ul class="events_list">
+  <% @events.each do |event| %>
+    <li>
+      <div>
+        <div class="image">
+          <% if event.image_url.present? %>
+            <%= link_to image_tag(event.image_url), event_path(event) %>
+          <% elsif event.business.logo.present? %>
+            <%= link_to image_tag(event.business.logo), event_path(event) %>
+          <% end %>
+        </div>
+      </div>
+      <div class="info">
+        <h2><u><%= link_to event.name, event_path(event) %></u></h2>
+        <p>
+          <%= sanitize(event.description) %>
+        </p>
+        <h4>
+          <%= (event.start).strftime("%-m/%-d/%y %l:%M%p") %> - 
+          <%= (event.end).strftime("%-m/%-d/%y %l:%M%p") %>
+        </h4>
+        <h4>Location: <%= event.location %></h4>
+        <h4>
+          <% if event.get_likes.size == 1 %>
+            1 person attending this event
+          <% else %>
+            <%= event.get_likes.size %> people attending this event
+          <% end %>
+        </h4>
+        <h4><%= link_to event.website_url, "https://#{event.website_url}" %></h4>
+      </div>
+    </li>
+  <% end %>
+</ul>
+<%= paginate @events %>

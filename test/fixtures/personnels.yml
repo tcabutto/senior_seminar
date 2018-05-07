@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  username: MyString
+  rank: 1
+  branch: 1
+  member: MyString
+
+two:
+  username: MyString
+  rank: 1
+  branch: 1
+  member: MyString

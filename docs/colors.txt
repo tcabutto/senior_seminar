@@ -1,0 +1,4 @@
+#003E5E - Dark Blue
+#61A2C6 - Blue
+#CDDFEA - Light Blue
+#FAFAFA - White

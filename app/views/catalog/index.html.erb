@@ -1,0 +1,53 @@
+<% if notice %>
+  <aside id="notice"><%= notice %></aside>
+<% end %>
+<% if account_signed_in?  and (current_account.accountable_type == "Personnel") %>
+  <%= react_component("DealTable",personnel: true, prerender: false) %>
+<% else %>
+  <%= react_component("DealTable", personnel: false, prerender: false) %>
+<% end %>
+
+<% if false %>
+  <h1>Deals</h1>
+  <ul class="deals_list">
+    <% @deals.each do |deal| %>
+      <li>
+        <div>
+          <div class="image">
+            <% if deal.business.logo.present? %>
+              <%= link_to image_tag(deal.business.logo), deal_path(deal) %>
+            <% end %>
+          </div>
+        </div>
+        <div class="info">
+          <h2><u><%= link_to deal.name, deal_path(deal) %></u></h2>
+          <h4><%= deal.business.name %></h4>
+          <h4>
+            <%= (deal.start_date).strftime("%-m/%-d/%y") %> - 
+            <%= (deal.end_date).strftime("%-m/%-d/%y") %>
+          </h4>
+          <h4>Category: <%= deal.category %></h4>
+          <p>
+            <%= sanitize(deal.description) %>
+          </p>
+        </div>
+        <div class="favorite">
+          <% if account_signed_in? and current_account.accountable_type == "Personnel" %>
+            <% if current_account.liked? deal %>
+              <%= link_to unfavorite_deal_path(deal), method: :put do %>
+                <%= image_tag("favorite.png") %>
+              <% end %>
+            <% else %>
+              <%= link_to favorite_deal_path(deal), method: :put do %>
+                <%= image_tag("dark-favorite.png") %>
+              <% end %>
+            <% end %>
+          <% end %>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+  <%= paginate @deals %>
+<% end %>
+
+

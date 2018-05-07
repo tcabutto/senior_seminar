@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Deal Reports</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Content</th>
+      <th>Reporter</th>
+      <th>Offense</th>
+      <th>Reportable</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @deal_reports.each do |deal_report| %>
+      <tr>
+        <td><%= deal_report.content %></td>
+        <td><%= deal_report.reporter_id %></td>
+        <td><%= deal_report.offense %></td>
+        <td><%= deal_report.reportable_id %></td>
+        <td><%= link_to 'Show', deal_report %></td>
+        <td><%= link_to 'Edit', edit_deal_report_path(deal_report) %></td>
+        <td><%= link_to 'Destroy', deal_report, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Deal Report', new_deal_report_path %>

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  content: MyText
+  account_id: 1
+  reportable_type: 1
+  offense: 1
+  reportable_comment_id: MyString
+
+two:
+  content: MyText
+  account_id: 1
+  reportable_type: 1
+  offense: 1
+  reportable_comment_id: MyString

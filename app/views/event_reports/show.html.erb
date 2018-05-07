@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @event_report.content %>
+</p>
+
+<p>
+  <strong>Reporter:</strong>
+  <%= @event_report.reporter_id %>
+</p>
+
+<p>
+  <strong>Offense:</strong>
+  <%= @event_report.offense %>
+</p>
+
+<p>
+  <strong>Reportable:</strong>
+  <%= @event_report.reportable_id %>
+</p>
+
+<%= link_to 'Edit', edit_event_report_path(@event_report) %> |
+<%= link_to 'Back', event_reports_path %>

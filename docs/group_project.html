@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>group_project</title>
+
+
+<style type="text/css">
+body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; }
+
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; }
+
+h2 tt, h2 code {
+  font-size: inherit; }
+
+h3 tt, h3 code {
+  font-size: inherit; }
+
+h4 tt, h4 code {
+  font-size: inherit; }
+
+h5 tt, h5 code {
+  font-size: inherit; }
+
+h6 tt, h6 code {
+  font-size: inherit; }
+
+h1 {
+  font-size: 28px;
+  color: black; }
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr {
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+li {
+  margin: 0; }
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  padding: 0;border-collapse: collapse; }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+
+img {
+  max-width: 100%; }
+
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+
+kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font-size: 11px;
+  line-height: 10px;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fcfcfc;
+  border: solid 1px #ccc;
+  border-bottom-color: #bbb;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #bbb
+}
+
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+	pre {
+		word-wrap: break-word;
+	}
+}
+</style>
+
+
+</head>
+
+<body>
+
+<div>
+<span style="float: left;">CS 4900, Spring 2018</span>
+<span style="float: right;">Dr. Zhiguang Xu</span>
+</div>
+
+<p style='clear: left;'></p>
+
+<p><br></p>
+
+<h2 id="toc_0">Group Project</h2>
+
+<h3 id="toc_1">Due: Last Week of April, 2018</h3>
+
+<h3 id="toc_2">Last Update: Feburary 12, 2018</h3>
+
+<h3 id="toc_3">1. Introduction</h3>
+
+<p>In this semester, 22 students in Senior Seminar will be working on their capstone project in six teams of three and one team of four. Each team will design, implement, deploy, demonstrate, and deliver a web-based application for the <strong>Valdosta-Lowndes Chamber of Commerce</strong> (a.k.a. the client) as part of their <em>Military Friendly</em> program newly launched in spring 2018. See details in Section 3 below.</p>
+
+<blockquote>
+<p>Client&#39;s Contact Information:</p>
+
+<p>Kaitlyn Redish:</p>
+
+<blockquote>
+<p>kredish@valdostachamber.com</p>
+
+<p>Cell: (229)561-5276</p>
+</blockquote>
+
+<p>Jeanette Stensgaard</p>
+
+<blockquote>
+<p>jstensgaard@valdostachamber.com</p>
+
+<p>Cell: (720)425-5618</p>
+</blockquote>
+</blockquote>
+
+<h3 id="toc_4">2.   Teams</h3>
+
+<p>By January 18, 2018, all teams were formed as shown below and at <a href="https://docs.google.com/spreadsheets/d/1VTXiwajECZbLGVxyUflH72C3Zy5Lh63AVniOoU99hLo/edit#gid=0">Senior Seminar Group Project</a>.</p>
+
+<table>
+<thead>
+<tr>
+<th>Team #</th>
+<th style="text-align: center">Team Name</th>
+<th>Team Members</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>A</td>
+<td style="text-align: center">Off the Rails</td>
+<td>Austin Hufstetler, John Bedene, Bethany Norton, and Faisal Shuraym</td>
+</tr>
+<tr>
+<td>B</td>
+<td style="text-align: center">Diamond on Wheels</td>
+<td>Amanda Mitchell, Zackery Weeks, and Brandon Corbett</td>
+</tr>
+<tr>
+<td>C</td>
+<td style="text-align: center">Ruby Tuesday</td>
+<td>Chloe Kimble, Rene Perez, Alex Venditti</td>
+</tr>
+<tr>
+<td>D</td>
+<td style="text-align: center">The Gemcutters</td>
+<td>Priya Patel, Joshua Vega, Jacob Latz</td>
+</tr>
+<tr>
+<td>E</td>
+<td style="text-align: center">Think Tank</td>
+<td>Tyler Cabutto, Arron Croft, and Calton Thomas</td>
+</tr>
+<tr>
+<td>F</td>
+<td style="text-align: center">Lofty Ideals</td>
+<td>Kayla Rivera, Brandon Neas, and Robert Brown</td>
+</tr>
+<tr>
+<td>F</td>
+<td style="text-align: center">Yellow Brick Railroad</td>
+<td>Mallory Helms, Joshua Jones, and JohnAnthony Dobson</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="toc_5">3.   Project Spec</h3>
+
+<p>On January 16, Mrs. Redish and Mrs. Stensgaard were invited to the class and gave an introduction to the project as summarized below:</p>
+
+<p><em>In Spring 2018, the Valdosta-Lowndes Chamber of Commerce is launching a new Military Friendly program. Businesses that are willing to provide a discount to military personnel and are members of the Chamber will receive a sticker to put on their door that designates them as such. You, CS students in Senior Seminar at VSU, will be responsible of developing a web-based application that active duty military could use for a discount and would also collect data such as how many times the Chamber was responsible for sending someone in to their business.</em></p>
+
+<p>Apparently and understandably, this project spec is non-technical, open-ended, and vague. It is then your responsibility to “<em>technologicalize</em>” and implement it. Since you are going to work on this application as your capstone project in senior seminar, in additional to satisfy the client&#39;s requirements, your application also has to meet certain academic standards. See sections 3.1 through 3.4 below for details.</p>
+
+<h4 id="toc_6">3.1 Basic Services</h4>
+
+<p>Services provided by your application are accessible solely to those users with an account.</p>
+
+<ul>
+<li><p>Chamber of Commerce</p>
+
+<ul>
+<li>An account for the user at the Chamber of Commerce, say Mrs. Redish, should be pre-created. </li>
+<li>Most of the times, she logs into this application and uses it through a browser on her regular computers with big screens.</li>
+<li>She is responsible for managing discounts, incentives, promotions, and benefits that were submitted by local businesses.</li>
+<li>This application allows her to do mining and analysis on data such as how many times the app. was used in the past month, which business was the most popular one on this app., etc.</li>
+<li>It also allows her to run reports (e.g. monthly or quarterly) and send them to businesses as an evidence of how effective this app has been at promoting their business.</li>
+<li>And more...</li>
+</ul></li>
+<li><p>Military personnel and their family members</p>
+
+<ul>
+<li>Sgt. Smith, an active duty military personnel as an example, has to sign up an account before he could use this application. </li>
+<li>Most of the times, he logs into this application and uses it through a browser on his mobile devices with small screens.</li>
+<li>He should be able to search businesses listed on this application by their names, locations (i.e. they should be mapped on Google maps), categories, etc. </li>
+<li>In order to prevent someone from abusing this app., a well-established <strong>mutual verification</strong> mechanism has to be put in place.</li>
+<li>He is able to check the history of his use of this app.</li>
+<li>And more...</li>
+</ul></li>
+<li><p>Businesses</p>
+
+<ul>
+<li>Any business (presumably a member of the Chamber of course), say Joe the Plummer, has to sign up an account before he could use this application.</li>
+<li>Most of the times, he logs into this application and uses it through a browser on his regular computers with big screens.</li>
+<li>He submits promotions/discounts to the Chamber for their approval.</li>
+<li>And more...</li>
+</ul></li>
+</ul>
+
+<p>And finally, of course, there a special type of user account:</p>
+
+<ul>
+<li><p>System admin</p>
+
+<ul>
+<li>Basically, you the developer, who is ultimately responsible for the technical maintenance of the entire application.</li>
+</ul></li>
+</ul>
+
+<h4 id="toc_7">3.2 Encourage People to Use This Application</h4>
+
+<ul>
+<li><p>Military personnel become &quot;frequent users&quot; in two ways </p>
+
+<ul>
+<li>they either use this application more;</li>
+<li>or they refer others to use it more through a referral system that you implement</li>
+</ul>
+
+<p>When new discounts become available, frequent users see them earlier than regular users do (say by two days). Some discounts might even be made exclusively available for the frequent users.</p></li>
+<li><p>Businesses become a &quot;premium business&quot; by attracting more users to use this application at their place. </p>
+
+<p>Premium businesses are listed higher than others. </p></li>
+</ul>
+
+<h4 id="toc_8">3.3 Development Platforms</h4>
+
+<p>This application is going to be built with Ruby on Rails in the back end.</p>
+
+<p>In the front end, each group is <strong>required</strong> to choose to implement at least one web page of the site that they consider the most appropriate as a Single Page Application (SPA) with ReactJS. </p>
+
+<h4 id="toc_9">3.4 Notes</h4>
+
+<p>Apparently, this is an open-ended project where you as a team have the opportunity to demonstrate your creativity and originality not only in the technical field of web programming but also in business and marketing. </p>
+
+<p>Also, as the project progresses, some of the project requirements outlined above might be changed by the client and/or me, which by the way happens a lot in the real world.</p>
+
+<h3 id="toc_10">4.   Project Management</h3>
+
+<p>Mandatorily, you should use Github to version-control you project. Warning: when working on your code and making commits, please make sure that <strong>every team member has a fair share of the workload</strong> since Github will automatically keep track of it as a measurement of that team member&#39;s contributions to the entire project. Optionally, you could also use tools like <a href="https://www.pivotaltracker.com/">Pivotal Tracker</a> to help managing your project.</p>
+
+<h3 id="toc_11">5.   Project Plan (Very Tentative)</h3>
+
+<p><strong>January</strong> – Project Kicked off. Teams formed. Github repos created.</p>
+
+<p>Then, in general, we will develop this project in three phases.</p>
+
+<p><strong>Phase I (Mid Feburary ~ Early March)</strong> – Wireframe the application with use cases/page flows using <a href="https://balsamiq.com/"><em>Balsamiq</em></a>. </p>
+
+<p><strong>Phase II (Mid March ~ Early April)</strong> – Work on the server-side/back-end of the application with Ruby on Rails. You should focus on completing majority if not all server-side functionalities of your project.</p>
+
+<p><strong>Phase III (Mid April ~ Early May)</strong> – Work on prettifying the client-side/front-end of the application with Bootstrap and building a selective set of pages as SPAs with ReactJS for better user experiences.</p>
+
+<p>The project will be concluded with formal project demos tentatively scheduled on <strong>05/01</strong> and <strong>05/03</strong>. I will arrange mock demos a week earlier to get you all ready for the real demos, and very importantly, to eliminate last minute surprises.</p>
+
+<p>Notice that during the development of your application, it is quite natural and understandable that in order to fix bugs, change data formats, and/or enhance existing features, etc., modifications (some of which might be even major) have to be made to some of the components in your project that you have already completed before; also, by no means you are prohibited from componentizing some of the web paged with ReactJS in the second phase of your design and development. The bottom line is: the three phases above are not necessarily mutually exclusive or clearly separated.</p>
+
+<p>Table below outlines a very <strong>tentative</strong> project plan including important dates, milestones, deliverables, and demos.</p>
+
+<table>
+<thead>
+<tr>
+<th>Week</th>
+<th style="text-align: center">Activity</th>
+<th>Thursday Deliverables</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>02/20</td>
+<td style="text-align: center">Project design</td>
+<td></td>
+</tr>
+<tr>
+<td>02/27</td>
+<td style="text-align: center">Project design</td>
+<td></td>
+</tr>
+<tr>
+<td>03/06  (End of Phase I)</td>
+<td style="text-align: center">Project design</td>
+<td>Wireframes ready. Meet the client for the progress demo. See <a href="https://docs.google.com/spreadsheets/d/1VTXiwajECZbLGVxyUflH72C3Zy5Lh63AVniOoU99hLo/edit#gid=0">here</a> for the schedule.</td>
+</tr>
+<tr>
+<td>03/13</td>
+<td style="text-align: center">Project development</td>
+<td>Email the client with revised wireframes</td>
+</tr>
+<tr>
+<td>03/20</td>
+<td style="text-align: center">Project development</td>
+<td></td>
+</tr>
+<tr>
+<td>03/27</td>
+<td style="text-align: center">Project development</td>
+<td></td>
+</tr>
+<tr>
+<td>04/03 (End of Phase II)</td>
+<td style="text-align: center">Project development</td>
+<td>Meet the client for the progress demo.</td>
+</tr>
+<tr>
+<td>04/10</td>
+<td style="text-align: center">Project development</td>
+<td></td>
+</tr>
+<tr>
+<td>04/17</td>
+<td style="text-align: center">Project development</td>
+<td></td>
+</tr>
+<tr>
+<td>04/24</td>
+<td style="text-align: center">Project development</td>
+<td>Mock Demos</td>
+</tr>
+<tr>
+<td>05/01 (Endof Phase III)</td>
+<td style="text-align: center">Project finalization</td>
+<td>Meet the client for the final demos.</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="toc_12">5.   Project Demonstrations</h3>
+
+<p>To be announced.</p>
+
+<h3 id="toc_13">6. Project Deliverables</h3>
+
+<p>To be announced.</p>
+
+
+
+
+</body>
+
+</html>

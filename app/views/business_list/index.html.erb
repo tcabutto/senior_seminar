@@ -1,0 +1,46 @@
+<% if notice %>
+  <aside id="notice"><%= notice %></aside>
+<% end %>
+
+<h1>Certified Moody Friendly Businesses</h1>
+
+<ul class="business_list">
+  <% @businesses.each do |business| %>
+    <% if business.status == "Approved" %>
+      <li>
+        <div>
+          <div class="image">
+            <% if business.logo.present? %>
+              <%= link_to image_tag(business.logo), business_path(business) %>
+            <% else %>
+              <%= link_to image_tag("no_profile_image.jpg"), business_path(business) %>
+            <% end %>
+          </div>
+        </div>
+        <div class="info">
+          <h2><u><%= link_to business.name, business_path(business) %></u></h2>
+          <% if business.phone_number.present? %>
+            <h4><%= business.phone_number %></h4>
+          <% end %>
+          <% if business.address1.present? %>
+            <h4><%= business.address1 %></h4>
+          <% end %>
+          <h4>
+            <% if business.address2.present? %>
+              <%= business.address2 %>
+            <% end %>
+          </h4>
+          <h4>
+          <% if business.city.present? and business.state.present? and business.zip.present? %>
+            <h4><%= business.city %>, <%= business.state %> <%= business.zip %><h4>
+          <% end %>
+          <% if business.website_url.present?%>
+            <%= link_to business.website_url, "http://#{business.website_url}" %>
+          <% end %>
+        </div>
+      </li>
+    <% end %>
+  <% end %>
+</ul>
+
+<%= paginate @businesses %>

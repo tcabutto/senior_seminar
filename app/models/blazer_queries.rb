@@ -1,0 +1,2 @@
+class BlazerQueries< ApplicationRecord
+end

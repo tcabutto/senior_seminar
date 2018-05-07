@@ -1,0 +1,22 @@
+<%= simple_form_for([@business, event]) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name, label: 'Event Name' %>
+    <%= f.input :description %>
+    <%= f.input :start %>
+    <%= f.input :end %>
+    <%= f.input :location %>
+    <%= f.input :address1, label: 'Address Line 1' %>
+    <%= f.input :address2, label: 'Address Line 2' %>
+    <%= f.input :city %>
+    <%= f.input :state, collection: us_states, selected: "GA" %>
+    <%= f.input :zip %>
+    <%= f.input :website_url, label: 'Website URL' %>
+    <%= f.input :image_url, as: :file, label: 'Upload Image' %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

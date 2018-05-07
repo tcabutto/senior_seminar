@@ -1,0 +1,9 @@
+<%= render 'show', deal: @deal %>
+<%= link_to 'Back', deal_path(@deal) %>
+<div class=" deals qr_code_print" media="print" type="text/css" >
+    <div class="col-md-2 col-md-offset-4"><%= raw @svg %></div>
+</div>
+
+<% if false %> 
+<%=@hash[:name].is_a?(String)%>
+<% end %>

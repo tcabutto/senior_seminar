@@ -1,0 +1,2 @@
+class BlazerDashboardQueries < ApplicationRecord
+end

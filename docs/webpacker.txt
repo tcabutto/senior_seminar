@@ -1,0 +1,4 @@
+To get webpacker to function for ReactJS use, try this...
+
+npm uninstall webpack-dev-server
+npm install -D webpack-dev-server@2.7.1

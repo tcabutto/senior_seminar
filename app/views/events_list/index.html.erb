@@ -1,0 +1,17 @@
+<% if notice %>
+  <aside id="notice"><%= notice %></aside>
+<% end %>
+
+<h1>Events</h1>
+
+  <%= form_tag(events_list_index_path, method: :get, :id=>"events_list_search") do %>
+    <p>
+      <%= text_field_tag :query, params[:query], placeholder: "Search Events", class: "form-control"  %>
+
+     </p>
+    <div id="events"><%= render 'events' %></div>
+  <% end %>
+
+
+
+  

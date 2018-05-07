@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  start_date: 2018-03-31
+  end_date: 2018-03-31
+  start_time: 2018-03-31 17:50:44
+  end_time: 2018-03-31 17:50:44
+  name: MyString
+  address1: MyString
+  address2: MyString
+  city: MyString
+  state: MyString
+  zip: MyString
+  description: MyText
+  website_url: MyString
+  rsvp: 9.99
+  image_url: MyString
+
+two:
+  start_date: 2018-03-31
+  end_date: 2018-03-31
+  start_time: 2018-03-31 17:50:44
+  end_time: 2018-03-31 17:50:44
+  name: MyString
+  address1: MyString
+  address2: MyString
+  city: MyString
+  state: MyString
+  zip: MyString
+  description: MyText
+  website_url: MyString
+  rsvp: 9.99
+  image_url: MyString

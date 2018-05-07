@@ -1,0 +1,8 @@
+<%= render 'deals/show', deal: @deal %>
+<%= simple_form_for [@deal, Comment.new] do |f| %>
+  <%= f.input :body, label: false,  placeholder: "Add a Reply" %><br />
+  <%= f.submit "Add comment" %>
+<% end %>
+<ul>
+  <%= render partial: 'comments/comment', collection: @deal.comments %>
+</ul>

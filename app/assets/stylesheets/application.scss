@@ -1,0 +1,124 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import "bourbon";
+
+body {
+  margin: 0;
+  padding: 0;
+}
+header.main {
+  text-align: center; // center on mobile
+  @media (min-width: 30em) {
+    text-align: left; // left align on desktop
+  }
+  margin: 0;
+  img {
+    padding: .1em;
+    height: 80px;
+    width: auto;
+  }
+}
+.content {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column; // mobile is horizontally laid out
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  @media (min-width: 30em) {
+    flex-direction: column; // desktop is vertically laid out
+    -webkit-box-orient: vertical;
+  }
+  .notice, #notice {
+    background: #CDDFEA;
+    border-radius: 0.5em;
+    border: solid 0.177em #003E5E;
+    color: #003E5E;
+    font-weight: bold;
+    margin-bottom: 1em;
+    padding: 1em 1.414em;
+    text-align: center;
+  }
+  .alert, #alert {
+    background: #CDDFEA;
+    border-radius: 0.5em;
+    border: solid 0.177em #003E5E;
+    color: #003E5E;
+    font-weight: bold;
+    margin-bottom: 1em;
+    padding: 1em 1.414em;
+    text-align: center;
+  }
+  main {
+    padding: 0.5em;
+    max-width: 95%;
+  }
+  h2 {
+    color: #003E5E;
+  }
+  .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 0;
+    width: 100%;
+    background-color: #003E5E;
+    color: white;
+    text-align: center;
+    height: 1.5em;
+    a {
+      color: white;
+    }
+    a:hover {
+      background-color: #003E5E;
+      text-decoration: none;
+    }
+  }
+
+}
+
+
+
+
+
+
+.pretty button .current {
+  padding-right: 12px;
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+.pretty th .asc {
+  background-color: red;
+}
+.pretty th .desc {
+  background-color: green;
+}
+.qrcode-text-btn {
+  display: none;
+}
+.qrcode-text {
+  box-sizing: border-box;
+  vertical-align: middle;
+}
+@media only screen and (max-device-width:750px) {
+  body, input {font-size:14pt}
+  input, label {vertical-align:middle}
+  .qrcode-text {padding-right:1.7em; margin-right:0}
+  .qrcode-text-btn {display:inline-block; background:url(//dab1nmslvvntp.cloudfront.net/wp-content/uploads/2017/07/1499401426qr_icon.svg) 50% 50% no-repeat; height:1em; width:1.7em; margin-left:-1.7em; cursor:pointer}
+  .qrcode-text-btn > input[type=file] {position:absolute; overflow:hidden; width:1px; height:1px; opacity:0}
+}

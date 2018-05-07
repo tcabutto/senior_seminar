@@ -1,0 +1,33 @@
+<% if notice %>
+  <aside id="notice"><%= notice %></aside>
+<% end %>
+
+<h1>Deals</h1>
+
+<ul class="deals_list">
+  <% @deals.each do |deal| %>
+    <li>
+      <div>
+        <div class="image">
+          <% if deal.business.logo.present? %>
+            <%= link_to image_tag(deal.business.logo), deal_path(deal) %>
+          <% end %>
+        </div>
+      </div>
+      <div class="info">
+        <h2><u><%= link_to deal.name, deal_path(deal) %></u></h2>
+        <h4><%= deal.business.name %></h4>
+        <h4>
+          <%= (deal.start_date).strftime("%-m/%-d/%y") %> - 
+          <%= (deal.end_date).strftime("%-m/%-d/%y") %>
+        </h4>
+        <h4>Category: <%= deal.category %></h4>
+        <p>
+          <%= sanitize(deal.description) %>
+        </p>
+      </div>
+    </li>
+
+</ul>
+
+

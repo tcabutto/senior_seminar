@@ -1,0 +1,20 @@
+<%= simple_form_for(@business) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name, label: 'Business Name' %>
+    <%= f.input :phone_number, label: 'Phone Number' %>
+    <%= f.input :address1, label: 'Address Line 1' %>
+    <%= f.input :address2, label: 'Address Line 2' %>
+    <%= f.input :city %>
+    <%= f.input :state, collection: us_states, selected: "GA" %>
+    <%= f.input :zip %>
+    <%= f.input :description, label: 'A brief description of your business' %>
+    <%= f.input :website_url, label: 'Website URL' %>
+    <%= f.input :logo, as: :file, label: 'Upload Logo' %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

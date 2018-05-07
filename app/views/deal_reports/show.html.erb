@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @deal_report.content %>
+</p>
+
+<p>
+  <strong>Reporter:</strong>
+  <%= @deal_report.reporter_id %>
+</p>
+
+<p>
+  <strong>Offense:</strong>
+  <%= @deal_report.offense %>
+</p>
+
+<p>
+  <strong>Reportable:</strong>
+  <%= @deal_report.reportable_id %>
+</p>
+
+<%= link_to 'Edit', edit_deal_report_path(@deal_report) %> |
+<%= link_to 'Back', deal_reports_path %>

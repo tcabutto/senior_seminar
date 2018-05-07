@@ -1,0 +1,123 @@
+ <head>
+ <script src="jquery-3.3.1.min.js"></script>
+ <script>
+ jQuery(document).ready(function(){
+        $('#hideshowdeals').on('click', function(event) {        
+             $('#total_deals').toggle('show');
+             
+        });
+        $('#hideshowdealsyear').on('click', function(event) {        
+             $('#total_deals_year').toggle('show');
+        });
+        $('#hideshowdealsmonth').on('click', function(event) {        
+             $('#total_deals_month').toggle('show');
+        });
+        $('#hideshowdealsweek').on('click', function(event) {        
+             $('#total_deals_week').toggle('show');
+        });
+        $('#hideshowdealsday').on('click', function(event) {        
+             $('#total_deals_day').toggle('show');
+        });
+
+        $('#hideshowpopularity').on('click', function(event) {        
+             $('#total_popularity').toggle('show');
+        });
+
+        $('#hideshowpopularityyear').on('click', function(event) {        
+             $('#total_popularity_year').toggle('show');
+        });
+
+        $('#hideshowpopularitymonth').on('click', function(event) {        
+             $('#total_popularity_month').toggle('show');
+        });
+
+         $('#hideshowpopularityweek').on('click', function(event) {        
+             $('#total_popularity_week').toggle('show');
+        });
+
+        $('#hideshowpopularityday').on('click', function(event) {        
+             $('#total_popularity_day').toggle('show');
+        });
+
+    });
+ </script>
+</head>
+<h2><b> Statistics</b> </h2>
+
+
+<%= javascript_include_tag "https://www.gstatic.com/charts/loader.js" %>
+<h3>Accounts<h3>
+<%= line_chart Account.group_by_day(:created_at).count %>
+
+<!--<input type='button' id='hideshowdeals' value='Deals total'>
+<input type='button' id='hideshowdealsyear' value='Deals by year total'>
+<input type='button' id='hideshowdealsmonth' value='Deals by month total'>
+<input type='button' id='hideshowdealsweek' value='Deals by week total'>
+<input type='button' id='hideshowdealsday' value='Dealls by day total'>
+<input type='button' id='hideshowpopularity' value='Popularity total'>
+<input type='button' id='hideshowpopularityyear' value='Popularity my year total'>
+<input type='button' id='hideshowpopularitymonth' value='Popularity by month total'>
+<input type='button' id='hideshowpopularityweek' value='Popularity by week total'>
+<input type='button' id='hideshowpopularityday' value='Popularity by day total'> -->
+
+<div id='charts'>
+    <div id='total_deals' value='hide/show'>
+    <h3>Businesses total deals</h3>
+
+    <%= businesses_total_deals%>
+    </div>
+
+    <div id='total_deals_year' value='hide/show'>
+    <h3>businesses total deals by year </h3>
+
+    <%= businesses_total_deals_by_year%>
+    </div>
+
+    <div id='total_deals_month'>
+    <h3>Businesses total deals by month </h3>
+
+    <%= businesses_total_deals_by_month%>
+    </div>
+
+    <div id='total_deals_week'>
+    <h3>Businesses deals by week </h3>
+
+    <%= businesses_total_deals_by_week%>
+    </div>
+
+    <div id='total_deals_day'>
+    <h3>Businesses deals by day </h3>
+
+    <%= businesses_total_deals_by_day%>
+    </div>
+
+    <div id='total_popularity'>
+    <h3>businesses total popularity</h3>
+
+    <%= businesses_total_popularity %>
+    </div>
+
+    <div id='total_popularity_year'>
+    <h3>Businesses total popularity by year </h3>
+
+    <%= businesses_total_popularity_by_year %>
+    </div>
+
+    <div id='total_popularity_month'>
+    <h3>Businesses total popularity by month </h3>
+
+    <%= businesses_total_popularity_by_month %>
+    </div>
+
+    <div id='total_popularity_week'>
+    <h3>Businesses total popularity by week </h3>
+
+    <%= businesses_total_popularity_by_week %>
+    </div>
+
+    <div id='total_popularity_day'>
+    <h3>Businesses total popularity by day </h3>
+
+    <%= businesses_total_popularity_by_day %>
+    </div>
+</div>

@@ -1,0 +1,56 @@
+<% if notice %>
+  <aside id="notice"><%= notice %></aside>
+<% end %>
+
+<span class="show_page">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 
+        col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            <h3 class="panel-title"><%= @personnel.username %></h3>
+          </div>
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-md-3 col-lg-3 " align="center">
+                <% if @personnel.image_url.present? %>
+                  <%= image_tag(@personnel.image_url) %>
+                <% else %>
+                  <%= image_tag("no_profile_image.jpg") %>
+                <% end %>
+              </div>
+              <div class=" col-md-9 col-lg-9 "> 
+                <table class="table table-user-information">
+                  <tbody>
+                    <tr>
+                      <td>Military Branch</td>
+                      <td><%= @personnel.branch %></td>
+                    </tr>
+                    <tr>
+                      <td>Military Rank</td>
+                      <td><%= @personnel.rank %></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="panel-footer">
+            <!--<%= link_to 'Favorite Deals', catalog_index_path, class: "btn btn-primary" %>
+            <%= link_to 'RSVP Events', catalog_index_path, class: "btn btn-primary" %>
+            <span class="pull-right">-->
+              <% if account_signed_in? and current_account.accountable_type == "Personnel" and 
+              current_account.accountable_id == @personnel.id %>
+                <%= link_to 'Edit Profile', edit_personnel_path(@personnel), class: "btn btn-primary" %>
+              <% elsif  account_signed_in? and current_account.accountable_type == "Personnel" and 
+              current_account.accountable_id != @personnel.id %>
+                <%= link_to "Report", new_personnel_report_path(@personnel), class: "btn btn-danger" %>-->
+              <% end %>
+            <!--</span>-->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</span>

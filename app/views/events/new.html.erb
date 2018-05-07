@@ -1,0 +1,17 @@
+<span class="new">
+  <% if account_signed_in? and current_account.accountable_type == "Business" and 
+    @business.status == "Approved" %>
+    <h1>New Event</h1>
+    <%= render 'form', event: @event %>
+  <% else %>
+    <h1 id="sorry">Sorry</h1>
+    <h2>Only Approved Businesses can create new Events!</h1>
+    <br>
+    <% if current_account.accountable_type == "Business" %>
+    <h2>Is all of your account information filled in?</h2>
+      <h2>
+        Please make sure that all of your information has been correctly filled out!
+      </h2>
+    <% end %>
+  <% end %>
+</span>

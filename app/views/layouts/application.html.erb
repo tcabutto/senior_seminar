@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CMFP Valdosta</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <%= javascript_pack_tag 'application' %>
+    <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA3cJ3yYtx9BOGxeHP5KENULdhnhWpemrc&callback=initMap">
+    </script>
+
+  </head>
+
+  <body>
+    <header class="main">
+      <%= render 'layouts/navigation' %>
+    </header>
+    <section class="content">
+      <main class='<%= controller.controller_name %>'>
+        <%= yield %>
+      </main>
+      <div class="footer">
+        <p>Certified Moody Friendly Program</p>
+      </div>
+    </section>
+  </body>
+</html>

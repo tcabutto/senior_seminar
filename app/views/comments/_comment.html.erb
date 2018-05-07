@@ -1,0 +1,19 @@
+<li class="comments">
+  <b><h5><%= comment.body %></b></h5>
+  <%if comment.personnel_id?%>
+    <% @personnel = Account.find(comment.personnel_id)%>
+    <small>Submitted by <%=@personnel.accountable.username %> <%= time_ago_in_words(comment.created_at) %> ago</small>
+  <%elsif comment.business_id?%>
+    <% @business = Account.find(comment.business_id)%>
+    <small>Submitted by <font color="red"><%=@business.accountable.name %></font> <%= time_ago_in_words(comment.created_at) %> ago</small>    
+  <%end%>
+  <%= simple_form_for [comment, Comment.new] do |f| %>
+      <%= f.input :body, label: false,  placeholder: "Add a Reply" %><br/>
+      <%= f.submit "Reply"  %>
+      <% end %>
+
+  <ul>
+      <%= render partial: 'comments/comment', collection: comment.comments %>
+  </ul>
+
+</li>

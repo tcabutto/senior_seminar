@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  popularity_given: 1
+  transaction_date: 2018-04-13
+
+two:
+  popularity_given: 1
+  transaction_date: 2018-04-13

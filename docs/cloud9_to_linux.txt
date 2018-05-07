@@ -1,0 +1,15 @@
+Change these 2 files to convert between Linux and Cloud9...
+/Procfile
+/config/webpacker.yml
+
+
+/config/webpacker.yml for Linux
+-------------------------------
+web: bundle exec rails s
+webpacker: ./bin/webpack-dev-server
+
+
+/config/webpacker.yml for Cloud9
+-------------------------------
+web: bundle exec rails s
+webpacker: WEBPACKER_DEV_SERVER_HTTPS=true ./bin/webpack-dev-server

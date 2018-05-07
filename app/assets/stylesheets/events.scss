@@ -1,0 +1,54 @@
+// Place all the styles related to the Personnels controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.events {
+  h1 {
+    color: #003E5E;
+  }
+  ul.events_list {
+    border-top: solid 0.250em #61A2C6;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    li {
+      padding: em;
+      margin: 0;
+      border-bottom: solid thin #ddd;
+      &::after {
+        clear: both;
+        content: " ";
+        display: block;
+      }
+      .image img {
+        float: left;
+        margin-left: 2em;
+        margin-right: 1em;
+        margin-bottom: 1em;
+        //box-shadow: 0.176em 0.176em 0.354em 0px rgba(0,0,0,0.75); //for testing
+        width: 10%;
+        height: auto;
+        max-width: 16em;
+      }
+      .info {
+        width: 85%;
+        padding-left: 18em;
+        a {
+          color: #003E5E;
+        }
+        a:hover {
+          background-color: white;
+        }
+      }
+      .rsvp {
+        float: right;
+        a {
+          color: #003E5E;
+        }
+        a:hover {
+          background-color: white;
+        }
+      }
+    }
+  }
+}
