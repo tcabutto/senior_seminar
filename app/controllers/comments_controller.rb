@@ -30,20 +30,6 @@ before_action :find_commentable
         end
     end
 
-    #def edit
-    #    @comment = @commentable.comments.find(params[:id])
-    #end
-
-    #def update
-    #    @comment = @commentable.comments.find(params[:id])
-
-     #   if @comment.update(comment_params)
-     #       redirect_to request.referrer, notice 'Your comment was successfully updated!'
-     #   else
-     #       redirect_to request.referrer, notice 'Your comment did not get updated.'
-     #   end
-   # end
-
     private
 
     def comment_params
